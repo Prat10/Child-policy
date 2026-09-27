@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Child Safety & CSAE Policy — CircleApp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c2230;
+    --ink-soft: #4a5265;
+    --paper: #fbfaf7;
+    --paper-raised: #ffffff;
+    --line: #dcd8cd;
+    --navy: #1e3a5f;
+    --navy-deep: #14293f;
+    --alert-bg: #fbeceb;
+    --alert-line: #b3403a;
+    --alert-ink: #7a2a26;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --ink: #e9e6df;
+      --ink-soft: #a9a49a;
+      --paper: #15171c;
+      --paper-raised: #1c1f26;
+      --line: #333640;
+      --navy: #6f9bc4;
+      --navy-deep: #a9c6e3;
+      --alert-bg: #2a1a19;
+      --alert-line: #b3403a;
+      --alert-ink: #e3a29e;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #e9e6df;
+    --ink-soft: #a9a49a;
+    --paper: #15171c;
+    --paper-raised: #1c1f26;
+    --line: #333640;
+    --navy: #6f9bc4;
+    --navy-deep: #a9c6e3;
+    --alert-bg: #2a1a19;
+    --alert-line: #b3403a;
+    --alert-ink: #e3a29e;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: calc(24px + env(safe-area-inset-top, 0px)); }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.65;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .masthead {
+    background: linear-gradient(155deg, var(--navy-deep), var(--navy));
+    color: #f2f0e9;
+    padding: 56px 24px 44px;
+  }
+  .masthead-inner { max-width: 760px; margin: 0 auto; }
+  .masthead .eyebrow {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: #c7d4e2;
+    margin: 0 0 14px;
+  }
+  .masthead h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(30px, 5vw, 42px);
+    line-height: 1.15;
+    margin: 0 0 16px;
+    max-width: 14ch;
+  }
+  .masthead p {
+    font-size: 16px;
+    color: #d7ddE6;
+    max-width: 55ch;
+    margin: 0;
+  }
+  .masthead .updated {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #aebdd0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 14px;
+  }
+
+  .layout {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .notice {
+    background: var(--alert-bg);
+    border-left: 3px solid var(--alert-line);
+    padding: 18px 20px;
+    margin: 0 0 48px;
+    border-radius: 2px;
+  }
+  .notice strong {
+    display: block;
+    color: var(--alert-ink);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+  }
+  .notice p { margin: 0; color: var(--ink); font-size: 15px; }
+
+  nav.toc {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 20px 22px;
+    margin-bottom: 52px;
+    background: var(--paper-raised);
+  }
+  nav.toc p {
+    margin: 0 0 10px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  nav.toc ol {
+    margin: 0;
+    padding-left: 20px;
+    columns: 2;
+    column-gap: 24px;
+    font-size: 14px;
+  }
+  nav.toc li { margin-bottom: 7px; break-inside: avoid; }
+  nav.toc a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+  nav.toc a:hover, nav.toc a:focus-visible { border-bottom-color: var(--navy); color: var(--navy); }
+
+  section { margin-bottom: 44px; scroll-margin-top: 24px; }
+  section:last-of-type { margin-bottom: 0; }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--ink);
+    margin: 0 0 4px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  h2 .num {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--navy);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  section > p, section > ul { max-width: 68ch; }
+  p { margin: 12px 0; font-size: 16px; color: var(--ink); }
+  ul { padding-left: 22px; margin: 14px 0; }
+  li { margin-bottom: 8px; font-size: 16px; }
+
+  .contact-block {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 20px 22px;
+    background: var(--paper-raised);
+    margin-top: 10px;
+  }
+  .contact-block a {
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .contact-block a:hover, .contact-block a:focus-visible { text-decoration: underline; }
+  .contact-block p { margin: 4px 0; font-size: 15px; }
+
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 48px;
+    color: var(--ink-soft);
+    font-size: 13px;
+  }
+  footer hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 0 0 20px;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 520px) {
+    nav.toc ol { columns: 1; }
+    .masthead { padding: 44px 20px 36px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">CircleApp Trust & Safety</p>
+    <h1>Child Safety & CSAE Policy</h1>
+    <p>Our commitment to preventing child sexual abuse and exploitation across CircleApp, and how to report a concern.</p>
+    <span class="updated">Last updated September 28, 2026</span>
+  </div>
+</header>
+
+<main class="layout">
+
+  <div class="notice">
+    <strong>Zero-tolerance policy</strong>
+    <p>CircleApp strictly prohibits child sexual abuse and exploitation, child sexual abuse material (CSAM), sexualization of minors, grooming, and any other form of sexual exploitation or abuse involving children.</p>
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <p>On this page</p>
+    <ol>
+      <li><a href="#prohibited">Prohibited content and behavior</a></li>
+      <li><a href="#reporting">Reporting a concern</a></li>
+      <li><a href="#handling">How reports are handled</a></li>
+      <li><a href="#enforcement">Account enforcement</a></li>
+      <li><a href="#authorities">Cooperation with authorities</a></li>
+      <li><a href="#prevention">Prevention and user safety</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <p>CircleApp is committed to maintaining a safe environment for everyone who uses it, especially children and minors. This policy explains what we prohibit, how we respond to reports, and how to reach us if you see something concerning.</p>
+
+  <section id="prohibited">
+    <h2><span class="num">01</span> Prohibited content and behavior</h2>
+    <p>CircleApp does not allow anyone to create, upload, share, request, promote, or distribute:</p>
+    <ul>
+      <li>Child sexual abuse material (CSAM)</li>
+      <li>Sexually explicit content involving minors</li>
+      <li>Sexual exploitation or abuse of children</li>
+      <li>Sexualization of children or minors</li>
+      <li>Grooming, or attempts to build an inappropriate relationship with a minor</li>
+      <li>Requests for sexual content involving minors</li>
+      <li>Content that facilitates trafficking or sexual exploitation of children</li>
+      <li>Attempts to obtain, distribute, or solicit CSAM</li>
+    </ul>
+  </section>
+
+  <section id="reporting">
+    <h2><span class="num">02</span> Reporting a concern</h2>
+    <p>If you suspect child sexual abuse, exploitation, grooming, or any other child-safety violation on CircleApp, report it to us right away.</p>
+    <p>When you report an issue, include as much relevant detail as you can — a username, profile link, message, or content — so we can identify the violation quickly.</p>
+    <div class="contact-block">
+      <p>Report an issue</p>
+      <a href="mailto:support@circledev.in">support@circledev.in</a>
+    </div>
+  </section>
+
+  <section id="handling">
+    <h2><span class="num">03</span> How reports are handled</h2>
+    <p>CircleApp reviews every report of a potential CSAE violation and takes action based on the circumstances and applicable law.</p>
+    <p>This can include removing the prohibited content, restricting or terminating the account involved, preserving relevant information where legally appropriate, and reporting suspected child sexual exploitation to the appropriate authorities when required by law.</p>
+  </section>
+
+  <section id="enforcement">
+    <h2><span class="num">04</span> Account enforcement</h2>
+    <p>Accounts found to be involved in CSAE or other child-safety violations may be suspended or permanently removed from CircleApp.</p>
+    <p>We also act against accounts that try to evade enforcement or repeatedly violate our child-safety requirements.</p>
+  </section>
+
+  <section id="authorities">
+    <h2><span class="num">05</span> Cooperation with authorities</h2>
+    <p>CircleApp may cooperate with law enforcement and relevant authorities regarding suspected child sexual abuse and exploitation, in accordance with applicable laws and legal requirements.</p>
+  </section>
+
+  <section id="prevention">
+    <h2><span class="num">06</span> Prevention and user safety</h2>
+    <p>We maintain safeguards designed to prevent and address child sexual abuse and exploitation on CircleApp.</p>
+    <p>If you come across suspicious behavior or content, report it rather than engaging with or redistributing it.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">07</span> Contact</h2>
+    <p>For questions about this policy, or to report a child-safety concern, reach out to us directly.</p>
+    <div class="contact-block">
+      <p>Email</p>
+      <a href="mailto:support@circledev.in">support@circledev.in</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <hr>
+  <p>© 2026 CircleApp. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
