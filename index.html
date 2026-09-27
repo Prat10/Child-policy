@@ -180,6 +180,46 @@
   .contact-block a:hover, .contact-block a:focus-visible { text-decoration: underline; }
   .contact-block p { margin: 4px 0; font-size: 15px; }
 
+  .steps {
+    list-style: none;
+    counter-reset: step;
+    margin: 20px 0 0;
+    padding: 0;
+    max-width: 68ch;
+  }
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding: 0 0 24px 46px;
+    border-left: 1px solid var(--line);
+    margin-left: 15px;
+  }
+  .steps li:last-child { border-left: 1px solid transparent; padding-bottom: 0; }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: -15px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .steps .step-title {
+    font-weight: 600;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 3px;
+  }
+  .steps p { margin: 0; font-size: 15px; color: var(--ink-soft); }
+
   footer {
     max-width: 760px;
     margin: 0 auto;
@@ -256,8 +296,24 @@
     <h2><span class="num">02</span> Reporting a concern</h2>
     <p>If you suspect child sexual abuse, exploitation, grooming, or any other child-safety violation on CircleApp, report it to us right away.</p>
     <p>When you report an issue, include as much relevant detail as you can — a username, profile link, message, or content — so we can identify the violation quickly.</p>
+
+    <ol class="steps">
+      <li>
+        <span class="step-title">Open your Profile</span>
+        <p>Go to the Profile tab in CircleApp.</p>
+      </li>
+      <li>
+        <span class="step-title">Tap Child Safety Feedback</span>
+        <p>Select the Child Safety Feedback option from the Profile menu.</p>
+      </li>
+      <li>
+        <span class="step-title">Submit your grievance</span>
+        <p>Describe the concern with as much detail as possible, then submit. Our team reviews it from there.</p>
+      </li>
+    </ol>
+
     <div class="contact-block">
-      <p>Report an issue</p>
+      <p>You can also report by email</p>
       <a href="mailto:support@circledev.in">support@circledev.in</a>
     </div>
   </section>
